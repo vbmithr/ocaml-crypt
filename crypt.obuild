@@ -1,0 +1,20 @@
+name: crypt
+version: 1.0
+description:
+        A tiny binding for the unix crypt function.
+licence: Public domain
+authors: Gerd Stolpmann
+obuild-ver: 1
+homepage: https://github.com/vbmithr/ocaml-crypt
+
+library crypt
+        modules: Crypt
+        src-dir: lib
+        cdir: lib
+        c-libs: crypt
+        csources: libmlcrypt.c
+
+executable test
+        main-is: test.ml
+        src-dir: test
+        build-deps: crypt

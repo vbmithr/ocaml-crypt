@@ -1,0 +1,21 @@
+OASISFormat: 0.3
+Name: crypt
+Version: 1.0
+Synopsis: A tiny binding for the unix crypt function.
+Authors: Vincent Bernardoff <vb@luminar.eu.org>
+License: ISC
+Plugins: META (0.3), DevFiles (0.3)
+BuildTools: ocamlbuild
+
+Library crypt
+  Path: lib
+  Modules: Crypt
+  CSources: libmlcrypt.c
+  CCLib: -lcrypt
+
+Executable test
+  Path: test
+  MainIs: test.ml
+  BuildDepends: crypt
+  CompiledObject: native
+  Install: false
