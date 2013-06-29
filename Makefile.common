@@ -1,0 +1,5 @@
+OCAMLMAKEFILE = $(shell opam config var lib)/ocaml-makefile/OCamlMakefile
+
+UNAME := $(shell uname -s)
+OCAMLC := $(shell which ocamlc.opt)
+OCAMLOPT := $(shell which ocamlopt.opt)

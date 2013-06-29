@@ -1,5 +1,3 @@
-# OASIS_START
-# DO NOT EDIT (digest: 7b1160a6c1d85957f9413afb382f717c)
 version = "1.0"
 description = "A tiny binding for the unix crypt function."
 archive(byte) = "crypt.cma"
@@ -7,5 +5,4 @@ archive(byte, plugin) = "crypt.cma"
 archive(native) = "crypt.cmxa"
 archive(native, plugin) = "crypt.cmxs"
 exists_if = "crypt.cma"
-# OASIS_STOP
 
