@@ -1,8 +1,7 @@
 include ../Makefile.common
 
 ifeq ($(UNAME),Linux)
-	OCAMLMKLIB_FLAGS += -lcrypt
-	LDFLAGS += -lcrypt
+	CLIBS += crypt
 endif
 
 NO_CUSTOM = y
