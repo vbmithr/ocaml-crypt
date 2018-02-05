@@ -1,8 +1,0 @@
-version = "1.0"
-description = "A tiny binding for the unix crypt function."
-archive(byte) = "crypt.cma"
-archive(byte, plugin) = "crypt.cma"
-archive(native) = "crypt.cmxa"
-archive(native, plugin) = "crypt.cmxs"
-exists_if = "crypt.cma"
-

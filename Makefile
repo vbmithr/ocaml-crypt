@@ -1,17 +1,5 @@
 all:
-	cd lib && $(MAKE)
-	cd test && $(MAKE)
-
-install:
-	ocamlfind install crypt lib/crypt* lib/dll* lib/lib* lib/META
-
-uninstall:
-	ocamlfind remove crypt
-
-reinstall:
-	$(MAKE) uninstall
-	$(MAKE) install
-
+	jbuilder build @install @runtest-crypt
+.PHONY: clean
 clean:
-	cd lib && $(MAKE) clean
-	cd test && $(MAKE) clean
+	rm -rf _build

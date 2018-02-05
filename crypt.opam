@@ -1,0 +1,18 @@
+opam-version: "1.2"
+name: "crypt"
+version: "2.0"
+authors: "Vincent Bernardoff <vb@luminar.eu.org>"
+maintainer: "Vincent Bernardoff <vb@luminar.eu.org>"
+license: "ISC"
+homepage: "https://github.com/vbmithr/ocaml-crypt"
+bug-reports: "https://github.com/vbmithr/ocaml-crypt/issues"
+dev-repo: "git://github.com/vbmithr/ocaml-crypt"
+
+available: [
+  ocaml-version >= "4.02.0"
+]
+
+build: [ "jbuilder" "build" "-j" jobs "-p" name "@install" ]
+depends: [
+  "jbuilder" {build & >= "1.0+beta16"}
+]

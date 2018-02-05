@@ -1,6 +1,5 @@
-open Crypt
-
-let () = if Array.length Sys.argv < 2 then
-    Printf.eprintf "Usage: %s <key>\n" Sys.argv.(0)
-  else
-    print_endline (crypt_md5 Sys.argv.(1))
+let () =
+  let buf = Bytes.create 256 in
+  let pwlen = Crypt.crypt_md5 buf "bleh" in
+  let password = Bytes.sub_string buf 0 pwlen in
+  Printf.printf "%s\n" password

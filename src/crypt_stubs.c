@@ -1,34 +1,30 @@
-#define _XOPEN_SOURCE
+#include <string.h>
 #include <unistd.h>
 #include <time.h>
 
-#include <caml/alloc.h>
-#include <caml/callback.h>
-#include <caml/fail.h>
-#include <caml/memory.h>
 #include <caml/mlvalues.h>
 
-value crypt_raw(value key, value salt) {
-  CAMLparam2(key, salt);
+CAMLprim value ml_crypt(value buf, value key, value salt) {
+  int pwlen;
+  char *password = crypt(String_val(key), String_val(salt));
 
-  char *result = crypt(String_val(key), String_val(salt));
-  if (result == NULL)
-    caml_failwith("crypt(3) returned NULL");
+  if (password == NULL)
+      return Val_int(-1);
 
-  CAMLreturn(caml_copy_string(result));
+  pwlen = strlen(password);
+  memcpy(String_val(buf), password, pwlen);
+  return Val_int(pwlen);
 }
 
 // http://www.gnu.org/software/libc/manual/html_node/crypt.html
-value crypt_md5(value key) {
-  CAMLparam1(key);
-
+value ml_crypt_md5(value buf, value key) {
   unsigned long seed[2];
   char salt[] = "$1$........";
   const char *const seedchars =
     "./0123456789ABCDEFGHIJKLMNOPQRST"
     "UVWXYZabcdefghijklmnopqrstuvwxyz";
   char *password;
-  int i;
+  int i, pwlen;
 
   /* Generate a (not very) random seed.
      You should do it better than this... */
@@ -41,7 +37,9 @@ value crypt_md5(value key) {
 
   /* Read in the user's password and encrypt it. */
   password = crypt(String_val(key), salt);
+  pwlen = strlen(password);
 
   /* Print the results. */
-  CAMLreturn(caml_copy_string(password));
+  memcpy(String_val(buf), password, pwlen);
+  return Val_int(pwlen);
 }
