@@ -1,0 +1,10 @@
+(executable
+ (name test)
+ (libraries crypt))
+
+(alias
+ (name runtest-crypt)
+ (deps
+  (:< test.exe))
+ (action
+  (run %{<})))

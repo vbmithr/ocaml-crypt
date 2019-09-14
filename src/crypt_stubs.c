@@ -1,6 +1,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <crypt.h>
 
 #include <caml/mlvalues.h>
 
