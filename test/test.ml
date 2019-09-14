@@ -1,5 +1,5 @@
 let () =
-  let buf = Bytes.create 256 in
+  let buf = String.init 256 (fun _ -> 'a') in
   let pwlen = Crypt.crypt_md5 buf "bleh" in
-  let password = Bytes.sub_string buf 0 pwlen in
+  let password = String.sub buf 0 pwlen in
   Printf.printf "%s\n" password

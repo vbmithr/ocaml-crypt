@@ -12,7 +12,7 @@ available: [
   ocaml-version >= "4.02.0"
 ]
 
-build: [ "jbuilder" "build" "-j" jobs "-p" name "@install" ]
+build: [ "dune" "build" "-p" name "-j" jobs ]
 depends: [
-  "jbuilder" {build & >= "1.0+beta16"}
+  "dune"
 ]
