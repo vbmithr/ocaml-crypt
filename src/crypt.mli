@@ -1,10 +1,22 @@
-val crypt: string -> string -> string -> int
-(** [crypt buf key salt] writes the result of crypt(3)([key], [salt])
-    in [buf], and returns its length. *)
+(** A tiny binding for the Unix crypt function. *)
 
-val crypt_md5: string -> string -> int
-(** [crypt_md5 buf key] write a password in the MD5 format suitable
-    for inclusion in /etc/shadow, autogenerating the salt, if [buf],
-    and returns its length. See
-    http://www.gnu.org/software/libc/manual/html_node/crypt.html for
-    the implementation. *)
+type key_derivation =
+  | Md5
+  | Sha256
+  | Sha512  (** The glibc2's additional encryption algorithms. *)
+
+val crypt : ?derivation:key_derivation -> ?salt:string -> string -> string
+(** [crypt ?derivation ~salt key] is the password encryption function. It is
+    based on the Data Encryption Standard algorithm with variations intended
+    (among other things) to discourage use of hardware implementations of a key
+    search.
+
+    @param salt
+      Salt is a two-character string chosen from the set [a-zA-Z0-9./].
+    @param key Key is a user's typed password.
+
+    @return Encrypted password.
+
+    @raise Failure If hashing fails. *)
+
+module Salt = Salt

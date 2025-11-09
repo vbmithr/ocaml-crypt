@@ -1,3 +1,6 @@
+# Artifacts
 _build
-**/*.merlin
 *.install
+# Editors
+**/*.merlin
+.vscode/
