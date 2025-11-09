@@ -56,5 +56,9 @@ val salt : string = "dHiPl3q99"
 - [Wikipedia article: crypt (Unix)](https://en.wikipedia.org/wiki/Crypt_(Unix))
 - [crypt(3)](https://man7.org/linux/man-pages/man3/crypt.3.html)
 
+## License
+
+The project is licensed under the [ISC License](./LICENSE), which allows for all permissions. 
+Just use it and enjoy yourself without fear.
 
 [Unix crypt]: https://man7.org/linux/man-pages/man3/crypt.3.html
