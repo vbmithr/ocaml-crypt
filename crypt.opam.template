@@ -1,1 +1,1 @@
-available: [os = "linux"]
+available: [os != "win32"]
