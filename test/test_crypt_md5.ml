@@ -1,1 +1,1 @@
-let () = print_endline @@ Crypt.Ffi.crypt_md5 "hello"
+let () = print_endline @@ Crypt.crypt ~derivation:Md5 ~salt:"GUBv0xjJ" "hello"
