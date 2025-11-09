@@ -17,7 +17,7 @@
 (license ISC)
 
 (source
- (github dx3mod/ocaml-crypt))
+ (github vbmithr/ocaml-crypt))
 
 (package
  (name crypt)

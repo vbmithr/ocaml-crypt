@@ -16,7 +16,7 @@ CAMLprim value ml_crypt(value key, value salt)
   char *key_hash = crypt(String_val(key), String_val(salt));
 
   if (key_hash == NULL)
-    caml_failwith("fail to hash a key");
+    caml_failwith("fail to hash the key");
 
   key_hash_value = caml_alloc_initialized_string(strlen(key_hash), key_hash);
 

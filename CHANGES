@@ -12,4 +12,6 @@
 
 2.0
 
-done cool things...
+* Switch to modern OCaml Platform tools
+* Refactor full source code  
+* Add nice documentation

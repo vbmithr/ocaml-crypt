@@ -10,8 +10,8 @@ authors: [
   "Vincent Bernardoff <vb@luminar.eu.org>" "Mikhail Lopatin <dx3mod@bk.ru>"
 ]
 license: "ISC"
-homepage: "https://github.com/dx3mod/ocaml-crypt"
-bug-reports: "https://github.com/dx3mod/ocaml-crypt/issues"
+homepage: "https://github.com/vbmithr/ocaml-crypt"
+bug-reports: "https://github.com/vbmithr/ocaml-crypt/issues"
 depends: [
   "dune" {>= "3.6"}
   "ocaml"
@@ -31,5 +31,5 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://github.com/dx3mod/ocaml-crypt.git"
+dev-repo: "git+https://github.com/vbmithr/ocaml-crypt.git"
 available: [os != "win32"]
