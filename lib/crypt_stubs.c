@@ -1,7 +1,10 @@
-#include <crypt.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+
+#ifdef __linux__
+#include <crypt.h>
+#endif
 
 #include <caml/mlvalues.h>
 #include <caml/fail.h>

@@ -1,6 +1,0 @@
-(library
- (public_name crypt)
- (foreign_stubs
-  (language c)
-  (names crypt_stubs))
- (c_library_flags -lcrypt))

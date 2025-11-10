@@ -23,4 +23,4 @@
  (name crypt)
  (synopsis "A tiny binding for the Unix crypt function")
  (description "A tiny binding for the Unix crypt function")
- (depends ocaml))
+ (depends ocaml dune-configurator))
