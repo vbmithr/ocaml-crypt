@@ -19,3 +19,5 @@
 2.1
 
 * Add a mutex lock to the crypt function
+* Add public FFi module
+* Implement platform-depend crypt backends 

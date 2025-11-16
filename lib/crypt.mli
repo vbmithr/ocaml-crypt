@@ -19,4 +19,10 @@ val crypt : ?derivation:key_derivation -> ?salt:string -> string -> string
 
     @raise Failure If hashing fails. *)
 
+(** {1 Salt} *)
+
 module Salt = Salt
+
+(** {1 Low level native bindings} *)
+
+module Ffi = Ffi
