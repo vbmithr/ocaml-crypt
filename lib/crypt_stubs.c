@@ -21,7 +21,7 @@ CAMLprim value ml_crypt(value key, value salt)
   if (key_hash == NULL)
     caml_failwith("fail to hash the key");
 
-  key_hash_value = caml_alloc_initialized_string(strlen(key_hash), key_hash);
+  key_hash_value = caml_copy_string(key_hash);
 
   CAMLreturn(key_hash_value);
 }
