@@ -1,5 +1,10 @@
 module Ffi = struct
   external crypt : string -> string -> string = "ml_crypt"
+
+  (** [crypt key opts] *)
+  let crypt =
+    let mutex = Mutex.create () in
+    fun[@inline] key opts -> Mutex.protect mutex (fun () -> crypt key opts)
 end
 
 type key_derivation = Md5 | Sha256 | Sha512

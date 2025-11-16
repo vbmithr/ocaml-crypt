@@ -15,3 +15,7 @@
 * Switch to modern OCaml Platform tools
 * Refactor full source code  
 * Add nice documentation
+
+2.1
+
+* Add a mutex lock to the crypt function
